@@ -149,5 +149,10 @@
             </plugin>
         </plugins>
     </build>
-
+	<developers>
+         <developer>
+             <name>Wilson Kamiya</name>
+             <email>Wilson@caelum.com.br</email>
+         </developer>
+     </developers>
 </project>
