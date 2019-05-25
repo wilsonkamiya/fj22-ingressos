@@ -1,8 +1,19 @@
 package br.com.caelum.ingresso.model;
 
-import javax.persistence.*;
-import java.util.*;
+import java.math.BigDecimal;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import java.util.Set;
 import java.util.stream.Collectors;
+
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 /**
  * Created by nando on 03/03/17.
@@ -15,6 +26,8 @@ public class Sala {
     private Integer id;
 
     private String nome;
+    
+    private BigDecimal preco;
 
     @OneToMany(fetch = FetchType.EAGER)
     private Set<Lugar> lugares = new HashSet<>();
@@ -29,6 +42,11 @@ public class Sala {
 
     public Sala(String nome) {
         this.nome = nome;
+    }
+    
+    public Sala(String nome, BigDecimal preco) {
+        this.nome = nome;
+        this.preco = preco;
     }
 
     public Integer getId() {
@@ -48,7 +66,15 @@ public class Sala {
     }
 
 
-    public void add(Lugar lugar) {
+    public BigDecimal getPreco() {
+		return preco;
+	}
+
+	public void setPreco(BigDecimal preco) {
+		this.preco = preco;
+	}
+
+	public void add(Lugar lugar) {
         this.lugares.add(lugar);
     }
 

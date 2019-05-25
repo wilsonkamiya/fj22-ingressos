@@ -1,9 +1,8 @@
 package br.com.caelum.ingresso.model.form;
 
+import java.math.BigDecimal;
 import java.time.LocalTime;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -15,8 +14,7 @@ import br.com.caelum.ingresso.model.Sala;
 import br.com.caelum.ingresso.model.Sessao;
 
 public class SessaoForm {
-	  @Id
-	  @GeneratedValue
+	  
 	  private Integer id;
 
 	  @NotNull
@@ -29,9 +27,20 @@ public class SessaoForm {
 	  @NotNull
 	  private Integer filmeId;
 
+	  
+	  private BigDecimal preco;
+	  
 	  //getters e setters
 	  
-	  public Integer getId() {
+	  public BigDecimal getPreco() {
+		return preco;
+	}
+
+	public void setPreco(BigDecimal preco) {
+		this.preco = preco;
+	}
+
+	public Integer getId() {
 		return id;
 	}
 
