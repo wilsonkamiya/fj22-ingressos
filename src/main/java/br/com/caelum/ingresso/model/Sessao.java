@@ -3,6 +3,8 @@ package br.com.caelum.ingresso.model;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.time.LocalTime;
+import java.util.List;
+import java.util.Map;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,7 +12,6 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
@@ -96,4 +97,8 @@ public class Sessao {
         return this.horario.plusMinutes(filme.getDuracao().toMinutes());
     }
  
+    public Map<String, List<Lugar>> getMapaDeLugares(){
+    	return sala.getMapaDeLugares();
+    }
+    
 }

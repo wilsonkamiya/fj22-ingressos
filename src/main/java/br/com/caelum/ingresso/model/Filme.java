@@ -23,7 +23,6 @@ public class Filme {
     
     private BigDecimal preco = new BigDecimal("0.0");
     
-
 	/**
      * @deprecated hibernate only
      */
