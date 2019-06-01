@@ -1,6 +1,7 @@
 package br.com.caelum.ingresso.model;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
@@ -26,8 +27,9 @@ public class Sala {
     private Integer id;
 
     private String nome;
+
+    private BigDecimal preco = new BigDecimal("0.0");
     
-    private BigDecimal preco;
 
     @OneToMany(fetch = FetchType.EAGER)
     private Set<Lugar> lugares = new HashSet<>();
@@ -67,7 +69,7 @@ public class Sala {
 
 
     public BigDecimal getPreco() {
-		return preco;
+		return preco.setScale(2,RoundingMode.HALF_UP);
 	}
 
 	public void setPreco(BigDecimal preco) {

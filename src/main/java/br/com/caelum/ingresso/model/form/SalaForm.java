@@ -5,14 +5,16 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 
+import javax.validation.constraints.NotNull;
+
 import org.hibernate.validator.constraints.NotBlank;
 
 import br.com.caelum.ingresso.model.Lugar;
 import br.com.caelum.ingresso.model.Sala;
 
 public class SalaForm {
-	
-	private BigDecimal preco;
+	@NotNull
+	private BigDecimal preco = new BigDecimal("0.0");
 	
     public BigDecimal getPreco() {
 		return preco;

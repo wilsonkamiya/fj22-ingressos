@@ -2,6 +2,7 @@ package br.com.caelum.ingresso.controller;
 
 import br.com.caelum.ingresso.dao.LugarDao;
 import br.com.caelum.ingresso.dao.SalaDao;
+import br.com.caelum.ingresso.dao.SessaoDao;
 import br.com.caelum.ingresso.model.form.LugarForm;
 import br.com.caelum.ingresso.model.Lugar;
 import br.com.caelum.ingresso.model.Sala;
@@ -27,7 +28,7 @@ public class LugarController {
     private SalaDao salaDao;
     @Autowired
     private LugarDao lugarDao;
-
+  
     @GetMapping("/admin/lugar")
     public ModelAndView form(@RequestParam("salaId") Integer salaId, LugarForm lugarDto) {
 

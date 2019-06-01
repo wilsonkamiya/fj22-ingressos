@@ -26,7 +26,6 @@ public class SessaoForm {
 	  	
 	  @NotNull
 	  private Integer filmeId;
-
 	  
 	  private BigDecimal preco;
 	  

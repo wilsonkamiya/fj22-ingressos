@@ -1,6 +1,7 @@
 package br.com.caelum.ingresso.model;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.time.Duration;
 
 import javax.persistence.Entity;
@@ -20,15 +21,8 @@ public class Filme {
     private Duration duracao;
     private String genero;
     
-    private BigDecimal preco;
+    private BigDecimal preco = new BigDecimal("0.0");
     
-    public BigDecimal getPreco() {
-		return preco;
-	}
-
-	public void setPreco(BigDecimal preco) {
-		this.preco = preco;
-	}
 
 	/**
      * @deprecated hibernate only
@@ -81,4 +75,13 @@ public class Filme {
     public void setGenero(String genero) {
         this.genero = genero;
     }
+    
+    public BigDecimal getPreco() {
+    	return preco.setScale(2,RoundingMode.HALF_UP);
+	}
+
+	public void setPreco(BigDecimal preco) {
+		this.preco = preco;
+	}
+
 }
