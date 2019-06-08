@@ -33,4 +33,12 @@ public class Carrinho {
     	this.ingressos.clear();
     }
 
+	public List<Ingresso> getIngressos() {
+		return ingressos;
+	}
+
+	public void setIngressos(List<Ingresso> ingressos) {
+		this.ingressos = ingressos;
+	}
+
 }

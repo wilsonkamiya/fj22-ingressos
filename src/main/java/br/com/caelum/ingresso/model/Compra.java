@@ -21,6 +21,10 @@ public class Compra {
 	
 	public Compra() {
 	}
+	
+	public Compra(List<Ingresso> ingressos) {
+		this.ingressos = ingressos;
+	}
 
 	public Long getId() {
 		return id;
@@ -35,10 +39,6 @@ public class Compra {
 	}
 
 	public void setIngressos(List<Ingresso> ingressos) {
-		this.ingressos = ingressos;
-	}
-	
-	public Compra(List<Ingresso> ingressos) {
 		this.ingressos = ingressos;
 	}
 	

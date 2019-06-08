@@ -1,5 +1,6 @@
 package br.com.caelum.ingresso.model;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
@@ -14,8 +15,13 @@ import javax.persistence.ManyToOne;
 import br.com.caelum.ingresso.model.descontos.Desconto;
 
 @Entity
-public class Ingresso {
-
+public class Ingresso implements Serializable{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer Id;	

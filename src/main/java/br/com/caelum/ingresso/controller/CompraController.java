@@ -28,15 +28,6 @@ public class CompraController {
     private LugarDao lugarDao;
     @Autowired
     private Carrinho carrinho;
-
-    @PostMapping("/compra/ingressos")
-    public ModelAndView enviarParaPagamento(CarrinhoForm carrinhoForm){
-        ModelAndView modelAndView = new ModelAndView("redirect:/compra");
-
-        carrinhoForm.toIngressos(sessaoDao, lugarDao).forEach(carrinho::add);
-
-        return modelAndView;
-    }
     
     @GetMapping("/compra")
     public ModelAndView checkout(Cartao cartao) {
@@ -44,6 +35,15 @@ public class CompraController {
     	modelAndView.addObject("carrinho",carrinho);
     	
     	return modelAndView;
+    }
+    
+    @PostMapping("/compra/ingressos")
+    public ModelAndView enviarParaPagamento(CarrinhoForm carrinhoForm){
+        ModelAndView modelAndView = new ModelAndView("redirect:/compra");
+
+        carrinhoForm.toIngressos(sessaoDao, lugarDao).forEach(carrinho::add);
+
+        return modelAndView;
     }
     
     @PostMapping("/compra/comprar")
